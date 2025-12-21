@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Azume-dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="tooplate-parallax-depth.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+<!--
+
+Tooplate 2144 Parallax Depth
+
+https://www.tooplate.com/view/2144-parallax-depth
+
+Free HTML CSS Template
+
+-->
+</head>
+<body>
+    <!-- Mouse Follower -->
+    <div class="mouse-follower" id="mouseFollower"></div>
+
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Hero Section with Parallax Layers -->
+    <div class="hero-container" id="hero">
+        <!-- Grid Overlay -->
+        <div class="grid-overlay">
+            <div class="grid-diagonal-1"></div>
+            <div class="grid-diagonal-2"></div>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="#hero" class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer hexagon -->
+                    <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" 
+                             fill="none" 
+                             stroke="url(#logo-gradient)" 
+                             stroke-width="2"/>
+                    <!-- Inner triangles creating depth -->
+                    <polygon points="50,20 70,35 50,50" 
+                             fill="url(#logo-gradient)" 
+                             opacity="0.8"/>
+                    <polygon points="50,50 70,35 70,65" 
+                             fill="url(#logo-gradient2)" 
+                             opacity="0.6"/>
+                    <polygon points="50,50 70,65 50,80" 
+                             fill="url(#logo-gradient)" 
+                             opacity="0.7"/>
+                    <polygon points="50,20 30,35 50,50" 
+                             fill="url(#logo-gradient2)" 
+                             opacity="0.7"/>
+                    <polygon points="50,50 30,35 30,65" 
+                             fill="url(#logo-gradient)" 
+                             opacity="0.5"/>
+                    <polygon points="50,50 30,65 50,80" 
+                             fill="url(#logo-gradient2)" 
+                             opacity="0.8"/>
+                    <!-- Center gem -->
+                    <polygon points="50,40 60,50 50,60 40,50" 
+                             fill="url(#logo-gradient3)" 
+                             stroke="#00ffcc" 
+                             stroke-width="1"/>
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff00ea;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="logo-gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff00ea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00ffcc;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="logo-gradient3" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00ffcc;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                      <span class="logo-text">
+  <img src="./images/logo.png" width="60" alt="Logo Azume">
+  <span>Azume</span>
+</span>
+
+            </a>
+        </div>
+
+        <!-- Background Layer -->
+        <div class="parallax-layer layer-bg"></div>
+        
+        <!-- Floating Elements Layer -->
+        <div class="parallax-layer layer-float">
+            <!-- Bottom Left Rectangle Group -->
+            <div class="rectangles-bottom-left">
+                <div class="rect rect-bl-1"></div>
+                <div class="rect rect-bl-2"></div>
+                <div class="rect rect-bl-3"></div>
+                <div class="rect rect-bl-4"></div>
+                <div class="rect rect-bl-5"></div>
+                <div class="rect rect-bl-6"></div>
+            </div>
+            
+            <!-- Top Right Rectangle Group -->
+            <div class="rectangles-top-right">
+                <div class="rect rect-tr-1"></div>
+                <div class="rect rect-tr-2"></div>
+                <div class="rect rect-tr-3"></div>
+                <div class="rect rect-tr-4"></div>
+            </div>
+        </div>
+        
+        <!-- Foreground Layer -->
+        <div class="parallax-layer layer-fg">
+            <div class="glowing-orb orb-1"></div>
+            <div class="glowing-orb orb-2"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Azume</h1>
+            <p class="hero-subtitle">Desenvolvedora de Software
+Criando experiências digitais</p>
+          <a href="#about" class="cta-circle">
+  <img src="./images/lais (1).jpg" alt="Explorar">
+</a>
+
+        </div>
+
+       
+    </div>
+
+    <!-- About Section -->
+    <section class="content-section section-gradient" id="about">
+        <div class="container">
+            <h2 class="section-title">SOBRE A MINHA EXPERIÊNCIA</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Experiências digitais que vão além do visual</h3>
+                    <p>Desenvolvo soluções digitais modernas combinando design estratégico, desenvolvimento web avançado e IA generativa para criar experiências que não apenas impressionam, mas entregam resultado.</p>
+                    <p>Cada projeto é pensado para performance, usabilidade e conversão, utilizando tecnologias atuais, animações inteligentes e automações com inteligência artificial para otimizar processos, personalizar interações e escalar negócios.
+
+Trabalho com uma abordagem orientada a dados, experiência do usuário e inovação contínua..</p>
+                    
+                    <div class="about-boxes">
+                        <div class="info-box">
+                            <div class="box-icon">
+                                ⚡
+                                <span class="box-number">1</span>
+                            </div>
+                            <h4 class="box-title">IA GENERATIVA</h4>
+                            <p class="box-description">IA Generativa aplicada ao negócio
+Automação inteligente, geração de conteúdo, chatbots, personalização de experiências e otimização de processos usando IA generativa integrada aos seus produtos digitais.</p>
+                        </div>
+                        <div class="info-box">
+                            <div class="box-icon">
+                                🎯
+                                <span class="box-number">2</span>
+                            </div>
+                            <h4 class="box-title">PERFORMANCE & ESCALA</h4>
+                            <p class="box-description">Performance, escala e confiabilidade
+Aplicações rápidas, seguras e otimizadas, preparadas para crescer com seu negócio e oferecer uma experiência fluida em qualquer dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="orbit-container">
+                        <div class="orbit orbit-1">
+                            <div class="orbit-dot dot-1"></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="orbit-dot dot-2"></div>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <div class="orbit-dot dot-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <a href="#hero" class="nav-btn-prev" title="Previous Section">
+            <div class="hexagon">
+                <span class="hex-content">▲</span>
+            </div>
+        </a>
+        <a href="#features" class="nav-btn-next" title="Next Section">
+            <div class="pyramid">
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-base"></div>
+                <span class="pyramid-inner">▼</span>
+            </div>
+        </a>
+    </section>
+
+    <!-- Features Section with 3D Carousel -->
+    <section class="content-section features-section-bg" id="features">
+        <!-- Grid Overlay -->
+        <div class="features-grid-overlay">
+            <div class="features-grid"></div>
+            <div class="features-grid-large"></div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title"> MEUS DIFERENCIAIS</h2>
+            <div class="features-container">
+                <div class="carousel-3d" id="carousel">
+                    <div class="feature-card-3d" data-index="0">
+                        <span class="feature-number">01</span>
+                        <div class="feature-icon-3d">🚀</div>
+                        <h3 class="feature-title-3d">Design estratégico & UX</h3>
+                        <p class="feature-description-3d">Interfaces modernas, intuitivas e focadas em conversão, pensadas para guiar o usuário até a ação.</p>
+                    </div>
+                    <div class="feature-card-3d" data-index="1">
+                        <span class="feature-number">02</span>
+                        <div class="feature-icon-3d">✨</div>
+                        <h3 class="feature-title-3d">Desenvolvimento moderno</h3>
+                        <p class="feature-description-3d">Front-end e back-end com tecnologias atuais, código limpo, integração com APIs e foco em manutenção e escalabilidade.</p>
+                    </div>
+                    <div class="feature-card-3d" data-index="2">
+                        <span class="feature-number">03</span>
+                        <div class="feature-icon-3d">🎨</div>
+                        <h3 class="feature-title-3d">Inteligência Artificial Generativa</h3>
+                        <p class="feature-description-3d">Estrutura inicial e exploração de soluções.</p>
+                    </div>
+                    <div class="feature-card-3d" data-index="3">
+                        <span class="feature-number">04</span>
+                        <div class="feature-icon-3d">💫</div>
+                        <h3 class="feature-title-3d">Performance</h3>
+                        <p class="feature-description-3d">Otimização, SEO e qualidade de código.</p>
+                    </div>
+                    <div class="feature-card-3d" data-index="4">
+                        <span class="feature-number">05</span>
+                        <div class="feature-icon-3d">🌊</div>
+                        <h3 class="feature-title-3d">Código Manual</h3>
+                        <p class="feature-description-3d">Refinamento, lógica de negócio e decisões técnicas.</p>
+                    </div>
+                    <div class="feature-card-3d" data-index="5">
+                        <span class="feature-number">06</span>
+                        <div class="feature-icon-3d">🎯</div>
+                        <h3 class="feature-title-3d">Ideia</h3>
+                        <p class="feature-description-3d">Entendimento do problema e definição de requisitos.</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <div class="carousel-btn" id="prevBtn">◀</div>
+                    <div class="carousel-btn" id="nextBtn">▶</div>
+                </div>
+                <div class="carousel-indicators" id="indicators"></div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <a href="#about" class="nav-btn-prev" title="Previous Section">
+            <div class="hexagon">
+                <span class="hex-content">▲</span>
+            </div>
+        </a>
+        <a href="#gallery" class="nav-btn-next" title="Next Section">
+            <div class="pyramid">
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-base"></div>
+                <span class="pyramid-inner">▼</span>
+            </div>
+        </a>
+    </section>
+
+   <!-- ================= GALERIA / PORTFÓLIO ================= -->
+<section id="gallery" class="relative bg-gradient-to-b from-[#070A13] via-[#0B0F1F] to-[#070A13] py-24 px-6 overflow-hidden">
+
+  <!-- Grid background -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,_rgba(255,255,255,0.15)_1px,_transparent_0)] bg-[size:40px_40px]"></div>
+
+  <div class="relative max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-20">
+      <span class="text-sm tracking-widest text-cyan-400 uppercase">Portfólio</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mt-3">
+        Projetos em Destaque
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+      Mais profundidade. Cada um com contexto, impacto e decisões técnicas documentadas.
+      </p>
+    </div>
+
+    <!-- ================= CARD 1 ================= -->
+    <div class="bg-[#0E1326] border border-white/10 rounded-2xl p-8 mb-12 hover:shadow-cyan-500/10 transition">
+
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+        <div>
+          <span class="inline-block text-xs text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">
+            10+ APIs integradas
+          </span>
+          <h3 class="text-2xl font-semibold text-white mt-4">
+            Sistema de Negociação de Dívidas
+          </h3>
+          <p class="text-gray-400 mt-3 max-w-3xl">
+            Plataforma completa para negociação e parcelamento de dívidas com integração de pagamentos e múltiplas APIs.
+          </p>
+        </div>
+
+        <button class="px-6 py-2 rounded-full border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 transition">
+          Ver detalhes
+        </button>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        <div class="bg-[#121735] p-6 rounded-xl">
+          <h4 class="text-red-400 font-medium mb-2">Problema</h4>
+          <p class="text-gray-400 text-sm">
+            Empresa precisavam de uma forma automatizada e segura para negociar dívidas com clientes.
+          </p>
+        </div>
+
+        <div class="bg-[#121735] p-6 rounded-xl">
+          <h4 class="text-green-400 font-medium mb-2">Solução</h4>
+          <p class="text-gray-400 text-sm">
+            Sistema end-to-end com fluxos de negociação, cálculo de parcelas, integração com Mercado Pago e comunicação automatizada.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="border border-cyan-500/30 bg-cyan-500/5 p-5 rounded-xl">
+          <h5 class="text-cyan-400 text-sm font-medium mb-1">IA auxiliou em</h5>
+          <p class="text-gray-400 text-sm">
+            Estrutura inicial do fluxo de negociação e testes unitários.
+          </p>
+        </div>
+
+        <div class="border border-purple-500/30 bg-purple-500/5 p-5 rounded-xl">
+          <h5 class="text-purple-400 text-sm font-medium mb-1">Refinamento manual</h5>
+          <p class="text-gray-400 text-sm">
+            Lógica financeira, integrações com APIs e UX do checkout.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Mercado Pago API</span>
+      </div>
+    </div>
+
+    <!-- ================= CARD 2 ================= -->
+    <div class="bg-[#0E1326] border border-white/10 rounded-2xl p-8 mb-12">
+
+      <span class="inline-block text-xs text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full">
+        Sistema em tempo real
+      </span>
+
+      <h3 class="text-2xl font-semibold text-white mt-4">
+        Plataforma de Gamificação Corporativa
+      </h3>
+
+      <p class="text-gray-400 mt-3 max-w-3xl">
+        Sistema de aprendizagem gamificado com trilhas de conhecimento, badges, rankings e recompensas.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        <div class="bg-[#121735] p-6 rounded-xl">
+          <h4 class="text-red-400 font-medium mb-2">Problema</h4>
+          <p class="text-gray-400 text-sm">
+            Baixo engajamento dos colaboradores em plataformas de trabalho
+          </p>
+        </div>
+
+        <div class="bg-[#121735] p-6 rounded-xl">
+          <h4 class="text-green-400 font-medium mb-2">Solução</h4>
+          <p class="text-gray-400 text-sm">
+            Engine de gamificação com sistema de pontos, achievements, notificações e progressão visual.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="border border-cyan-500/30 bg-cyan-500/5 p-5 rounded-xl">
+          <h5 class="text-cyan-400 text-sm font-medium mb-1">IA auxiliou em</h5>
+          <p class="text-gray-400 text-sm">
+            Prototipação de componentes de UI e estrutura de banco de dados.
+          </p>
+        </div>
+
+        <div class="border border-purple-500/30 bg-purple-500/5 p-5 rounded-xl">
+          <h5 class="text-purple-400 text-sm font-medium mb-1">Refinamento manual</h5>
+          <p class="text-gray-400 text-sm">
+            Algoritmo de ranking, sistema de notificações em tempo real e queries.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="tag">Angular</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">MySQL Server</span>
+        <span class="tag">SignalR</span>
+      </div>
+    </div>
+
+   
+
+
+<!-- TAG STYLE -->
+<style>
+  .tag {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.05);
+    color: #d1d5db;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+</style>
+
+
+        <!-- Navigation -->
+        <a href="#features" class="nav-btn-prev" title="Previous Section">
+            <div class="hexagon">
+                <span class="hex-content">▲</span>
+            </div>
+        </a>
+        <a href="#contact" class="nav-btn-next" title="Next Section">
+            <div class="pyramid">
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-face"></div>
+                <div class="pyramid-base"></div>
+                <span class="pyramid-inner">▼</span>
+            </div>
+        </a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section contact-section-bg" id="contact">
+        <div class="container">
+            <h2 class="section-title">Vem me conhecer</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Mensagem</button>
+                </div>
+                <div class="contact-info">
+                    <h3>Minhas conexões</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <span class="info-text">laiscristina.animamundi@gmail.com</span>
+                    </div>
+                   
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <span class="info-text">São Paulo SP</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <a href="https://www.linkedin.com/in/lais-cristina-300817144/">
+                        <span class="info-text">www.linkedin.com/in/lais-cristina-300817144/</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <a href="#gallery" class="nav-btn-prev" title="Previous Section">
+            <div class="hexagon">
+                <span class="hex-content">▲</span>
+            </div>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#hero" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">Sobre</a>
+                <a href="#features" class="footer-link">Diferencial</a>
+                <a href="#gallery" class="footer-link">Destaques</a>
+                <a href="#contact" class="footer-link">Contato</a>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                <p>© 2025 by Azume Experience. All rights reserved.</p>
+                <p>Design: <a href="https://www.tooplate.com" target="_blank" rel="nofollow noopener">Tooplate</a></p>
+            </div>
+        </div>
+    </footer>
+     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"pt","languages":["pt","es","en"],"wrapper_selector":".gtranslate_wrapper","switcher_vertical_position":"bottom","flag_style":"3d","alt_flags":{"en":"usa","pt":"brazil","es":"mexico"}}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<script src="tooplate-2144-parallax-scripts.js"></script>
+</body>
+</html>
