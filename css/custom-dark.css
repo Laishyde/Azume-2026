@@ -1,0 +1,67 @@
+
+/* ===============================
+   INTEGRA GALERIA AO SITE ESCURO
+   =============================== */
+
+/* Remove fundo branco geral do Tooplate */
+body,
+.tm-container-content,
+.tm-mt-60,
+.tm-gallery,
+.tm-gallery-page {
+   background-color: #171729 !important;
+}
+
+/* Força herdar o fundo da página */
+.tm-container-content {
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+/* ===============================
+   AJUSTE DE POSIÇÃO DO VÍDEO HERO
+   =============================== */
+
+#tm-video-container {
+    align-items: flex-end !important;
+ 
+}
+
+#tm-video {
+    transform: translateY(150px);
+}
+.tm-video-item {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tm-video-item img {
+    border-radius: 12px;
+}
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    #tm-video {
+        transform: translateY(80px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #tm-video-container {
+        align-items: center;
+    }
+
+    #tm-video {
+        transform: translateY(20px);
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    #tm-video {
+        transform: translateY(0);
+    }
+}
