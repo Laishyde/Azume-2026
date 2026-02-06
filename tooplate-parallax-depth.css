@@ -1255,8 +1255,8 @@ html {
 }
 
 .orbit-3 {
-	width: 400px;
-	height: 400px;
+	width:1000px;
+	height: 1000px;
 	animation: pulse 3s ease-in-out infinite 2s;
 }
 

@@ -41,6 +41,134 @@ https://templatemo.com/tm-556-catalog-z
     margin: 0 auto;
 }
 
+.about-visual-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer-mockup {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+}
+
+.computer-frame {
+    width: 100%;
+    display: block;
+}
+/* CENTRALIZA TUDO */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ÁREA VISUAL */
+.about-visual {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 100px auto 0; /* 👈 desce o computador do título */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* COMPUTADOR NORMAL */
+.computer-mockup {
+    position: relative;
+  
+    width: 100%;
+    z-index: 2;
+}
+
+.computer-frame {
+    width: 100%;
+    display: block;
+}
+
+/* VIDEO NA TELA */
+.computer-screen {
+    position: absolute;
+    top: 11%;
+    left: 7%;
+    width: 86%;
+    height: 63%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.computer-screen video {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    display: block;
+    margin-top: 80px;
+}
+
+/* CIRCULO GRANDE ATRÁS */
+.orbit-big {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    z-index: 1;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .orbit-big {
+        width: 700px;
+        height: 700px;
+    }
+
+    .about-visual {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .orbit-big {
+        width: 520px;
+        height: 520px;
+        opacity: 0.4;
+    }
+
+    .computer-mockup {
+        max-width: 90%;
+    }
+
+    .about-visual {
+        margin-top: 40px;
+    }
+    .computer-screen video {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    display: block;
+    margin-top: 0px;
+}
+}
+
+@media (max-width: 480px) {
+    .orbit-big {
+        width: 380px;
+        height: 380px;
+        opacity: 0.3;
+    }
+
+    .about-visual {
+        margin-top: 30px;
+    }
+}
+
+
+/* ÁREA DA TELA */
+
+
 .main-img {
     width: 100%;
     border-radius: 26px;
