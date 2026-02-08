@@ -167,7 +167,7 @@ object-fit:cover;
         .card-info h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
         .card-info p { color: #555; font-size: clamp(0.9rem, 1.5vw, 1.1rem); line-height: 1.6; }
 
-        /* --- CÓDIGO DA FILEIRA FINAL (LAYOUT) --- */
+        /* --- CÓDIGO DA FILEIRA FINAL (LAYOUT) -- */
         .final-grid-container {
             position: absolute;
             width: 90%;
