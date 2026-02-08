@@ -743,9 +743,7 @@ background: linear-gradient(
 }
 
 
-/* =========================
-   CORREÇÃO RESPONSIVO SAMSUNG A14 (≈ 412px)
-========================= */
+
 @media (min-width: 400px) and (max-width: 440px) {
 
     /* --- TÍTULOS --- */
