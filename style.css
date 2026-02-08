@@ -717,9 +717,7 @@ background: linear-gradient(
     font-size: 0.75rem;
   }
 }
-/* =========================
-   TÍTULO CENTRALIZADO ACIMA DOS CARDS (MOBILE)
-========================= */
+
 
 @media (max-width: 768px) {
 
