@@ -113,7 +113,7 @@ object-fit:cover;
         }
 
         .scroll-container {
-            height: 800vh; /* Mantido para os primeiros cards serem calmos */
+            height: 800vh;
             position: relative;
         }
 
