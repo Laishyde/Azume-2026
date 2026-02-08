@@ -106,13 +106,38 @@ ease:"power3.out"
             ease: "power3.out"
         });
 
-        // Efeito de flutuação nos itens finais
-        gsap.to(".final-item", {
-            y: -20,
-            duration: 2,
-            repeat: -1,
-            yoyo: true,
-            stagger: 0.2,
-            ease: "sine.inOut"
-        });
-        
+        if(window.innerWidth > 480){
+   gsap.to(".final-item", {
+      y:-20,
+      duration:2,
+      repeat:-1,
+      yoyo:true,
+      stagger:0.2,
+      ease:"sine.inOut"
+   });
+}
+// 🎲 HERO IMAGENS ALEATÓRIAS AO CARREGAR
+const heroLayersRandom = {
+    bg: document.querySelector(".bg"),
+    mid: document.querySelector(".mid"),
+    front: document.querySelector(".front")
+};
+
+const imagens = [
+"https://picsum.photos/1920/1080?random=11",
+"https://picsum.photos/1920/1080?random=12",
+"https://picsum.photos/1920/1080?random=13",
+"https://picsum.photos/1920/1080?random=14",
+"https://picsum.photos/1920/1080?random=15",
+"https://picsum.photos/1920/1080?random=16"
+];
+
+// função para pegar imagem aleatória
+function pegarImagem(){
+    return imagens[Math.floor(Math.random()*imagens.length)];
+}
+
+// aplica imagens diferentes
+heroLayersRandom.bg.style.backgroundImage = `url(${pegarImagem()})`;
+heroLayersRandom.mid.style.backgroundImage = `url(${pegarImagem()})`;
+heroLayersRandom.front.style.backgroundImage = `url(${pegarImagem()})`;

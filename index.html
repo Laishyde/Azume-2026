@@ -1,95 +1,405 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Azume Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lais Portfolio | Front-End & UX</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Scripts GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #000;
+            --text-light: #F2F2F2;
+            --text-dark: #111;
+            --accent: #0a66c2;
+        }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to bottom, transparent, #F2F2F2);
+            z-index: 4;
+        }
+
+        .layer {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            background-size: cover;
+            background-position: center;
+        }
+
+   .bg { z-index:1; }
+.mid { z-index:2; mix-blend-mode:screen; opacity:0.3; }
+.front { z-index:3; opacity:0.15; }
+
+
+        .title {
+            position: relative;
+            color: white;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            z-index: 5;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        #cards-container {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .card {
+            position: absolute;
+            width: 220px;
+            aspect-ratio: 16/10;
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- TIMELINE SECTION --- */
+        .timeline-wrapper {
+            position: relative;
+            background: #F2F2F2;
+            color: var(--text-dark);
+        }
+
+        .scroll-container {
+            height: 800vh;
+            position: relative;
+        }
+
+        .sticky-scene {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 2000px;
+            padding: 20px;
+        }
+
+        .timeline-title {
+            position: absolute;
+            top: 8%;
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            z-index: 20;
+            width: 90%;
+            color: var(--text-dark);
+        }
+
+        .story-card {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5vw;
+            opacity: 0;
+            transform: translateZ(-1000px);
+            pointer-events: none;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .card-visual {
+            flex: 1.2;
+            aspect-ratio: 16/10;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+        .card-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-info { flex: 0.8; }
+        .card-info h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1; margin-bottom: 20px; }
+        .card-info p { color: #444; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.6; }
+
+        /* --- FINAL GRID (APPLICATIONS) --- */
+        .final-grid-container {
+            position: absolute;
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(100px);
+            z-index: 10;
+        }
+
+        .final-item {
+            flex: 1;
+            aspect-ratio: 3/4;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: #ddd;
+        }
+        .final-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- IMPACT & METRICS --- */
+        .final-section {
+            background: linear-gradient(180deg, #F2F2F2 0%, #E5E7E9 100%);
+            color: var(--text-dark);
+            padding: 100px 8vw;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .final-intro { max-width: 900px; }
+        .final-intro h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 2rem; line-height: 1.1; }
+        .final-intro p { font-size: clamp(1.1rem, 1.5vw, 1.4rem); line-height: 1.6; color: #333; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .metric-card:hover { transform: translateY(-10px); }
+        .metric-number { display: block; font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
+        .metric-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #666; }
+
+        .about-final {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        .about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
+        .about-photo:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+        .about-text h3 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
+        .about-text p { font-size: 1.2rem; line-height: 1.7; color: #444; margin-bottom: 30px; }
+
+        .btn-linkedin {
+            display: inline-flex;
+            padding: 18px 40px;
+            background: var(--text-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-linkedin:hover { background: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(10,102,194,0.3); }
+
+        .footer-final { background: #000; padding: 60px 20px; text-align: center; color: #666; font-weight: 700; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; }
+
+        /* --- CORREÇÃO RESPONSIVA --- */
+        @media (max-width: 768px) {
+            .hero::after { height: 15vh; }
+            
+            .sticky-scene { 
+                overflow: visible; /* Permite que o conteúdo longo apareça */
+                height: auto; 
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+            
+            .timeline-title { 
+                position: relative; 
+                top: 0; 
+                margin-bottom: 40px; 
+                font-size: 2.2rem;
+            }
+
+            .story-card {
+                position: relative; /* Muda de absolute para relative no mobile */
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                gap: 20px;
+                opacity: 1 !important; /* Força visibilidade no mobile */
+                transform: none !important;
+                margin-bottom: 80px;
+                pointer-events: auto;
+            }
+
+            .card-visual { width: 100%; }
+
+            /* CORREÇÃO DOS CARDS DE APLICAÇÃO EM COLUNA */
+            .final-grid-container {
+                position: relative; /* Sai do absolute */
+                flex-direction: column;
+                width: 100%;
+                opacity: 1 !important;
+                transform: none !important;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .final-item {
+                width: 100%;
+                flex: none;
+                max-width: 100%;
+                aspect-ratio: 4/5;
+            }
+
+            .scroll-container {
+                height: auto; /* Remove o scroll gigante no mobile para evitar vácuos */
+            }
+
+            .sticky-scene {
+                position: relative; /* Remove o sticky no mobile para fluxo linear */
+            }
+
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .about-final { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 30px;
+            }
+            .about-photo { max-width: 280px; margin: 0 auto; }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+            .final-intro h2 { font-size: 2rem; }
+            .metric-card { padding: 30px 15px; }
+            .title { font-size: 2.5rem; }
+        }
+    </style>
 </head>
-
 <body>
 
 <section class="hero">
-
-<div class="layer bg"></div>
-<div class="layer mid"></div>
-<div class="layer front"></div>
-
-<div id="cards-container"></div>
-
-<h1 class="title">LAIS PORTFOLIO</h1>
-
+    <div class="layer bg"></div>
+    <div class="layer mid"></div>
+    <div class="layer front"></div>
+    <div id="cards-container"></div>
+    <h1 class="title">LAIS PORTFOLIO</h1>
 </section>
 
-<!-- Timeline Scroll Section -->
-    <div class="timeline-wrapper">
-    
+<div class="timeline-wrapper">
+    <div class="scroll-container">
+        <div class="sticky-scene">
+            <h2 class="timeline-title" id="timelineTitle">Minha jornada como Social Media</h2>
 
-        <div class="scroll-container">
-            <div class="sticky-scene">
-<h2 class="timeline-title" id="timelineTitle"></h2>
-
-
-                <!-- Cards de História (Aparecem um por um) -->
-                <div class="story-card" id="card-1">
-                    <div class="card-visual"><img src="./assets/menina.png"></div>
-                    <div class="card-info">
-                        <h2>E3M3 Sports</h2>
-                        <p>Criando interfaces que transcendem o bidimensional.</p>
-                    </div>
+            <div class="story-card" id="card-1">
+                <div class="card-visual"><img src="./assets/e3m3b.png" alt="E3M3 Sports"></div>
+                <div class="card-info">
+                    <h2>E3M3 Sports</h2>
+                    <p>Criando interfaces que transcendem o bidimensional e conectam atletas ao futuro digital.</p>
                 </div>
+            </div>
 
-                <div class="story-card" id="card-2">
-                    <div class="card-visual"><img src="./assets/e3m3b.png"></div>
-                    <div class="card-info">
-                      <h2>E3M3 Sports</h2>
-                        <p>Explorando novas camadas de identidade digital.</p>
-                    </div>
+            <div class="story-card" id="card-2">
+                <div class="card-visual"><img src="./assets/menina.png" alt="Identidade"></div>
+                <div class="card-info">
+                    <h2>E3M3 Sports</h2>
+                    <p>Explorando novas camadas de identidade digital através de design focado em performance.</p>
                 </div>
+            </div>
 
-                <div class="story-card" id="card-3">
-                    <div class="card-visual"><img src="./assets/baby.png"></div>
-                    <div class="card-info">
-                        <h2>Flor Baby</h2>
-                        <p>Unindo sentimento e tecnologia em uma única visão.</p>
-                    </div>
+            <div class="story-card" id="card-3">
+                <div class="card-visual"><img src="./assets/baby.png" alt="Flor Baby"></div>
+                <div class="card-info">
+                    <h2>Flor Baby</h2>
+                    <p>Unindo sentimento, delicadeza e tecnologia para criar uma experiência de compra única.</p>
                 </div>
-                <div class="story-card" id="card-4">
-                    <div class="card-visual"><img src="./assets/cosplay2.png"></div>
-                    <div class="card-info">
-                        <h2>Gallery Cosplay</h2>
-                        <p> Tecnologia sob uma visão atual, moderna e expressiva.</p>
-                    </div>
+            </div>
+
+            <div class="story-card" id="card-4">
+                <div class="card-visual"><img src="./assets/cosplay2.png" alt="Gallery Cosplay"></div>
+                <div class="card-info">
+                    <h2>Gallery Cosplay</h2>
+                    <p>A tecnologia sob uma visão atual, moderna e expressiva para comunidades criativas.</p>
                 </div>
-<div id="chapterTrigger"></div>
+            </div>
 
-             <div class="final-grid-container" id="webAppsSection">
-  <div class="final-item"><img src="./assets/site2.png" alt="Item 1"></div>
-  <div class="final-item"><img src="./assets/site3.png" alt="Item 2"></div>
-  <div class="final-item"><img src="./assets/site4.png" alt="Item 3"></div>
-  <div class="final-item"><img src="./assets/site5.png" alt="Item 4"></div>
-</div>
+            <div id="chapterTrigger"></div>
 
+            <div class="final-grid-container" id="webAppsSection">
+                <div class="final-item"><img src="./assets/site2.png" alt="App 1"></div>
+                <div class="final-item"><img src="/assets/site3.png" alt="App 2"></div>
+                <div class="final-item"><img src="/assets/site4.png" alt="App 3"></div>
+                <div class="final-item"><img src="/assets/site5.png" alt="App 4"></div>
             </div>
         </div>
     </div>
+</div>
 
-   <section class="final-section">
+<section class="final-section">
+    <div class="final-intro">
+        <h2>Impacto que vai além do visual</h2>
+        <p>Desenvolvo experiências digitais orientadas por dados, unindo design, tecnologia e estratégia para gerar conversão e engajamento real.</p>
+    </div>
 
-  <!-- Impacto -->
-  <div class="final-intro">
-    <h2>Impacto que vai além do visual</h2>
-    <p>
-      Desenvolvo experiências digitais orientadas por dados, unindo design,
-      tecnologia e estratégia para gerar conversão, engajamento e crescimento real.
-    </p>
-  </div>
-
-  <!-- Métricas -->
   <div class="metrics-grid">
 
   <div class="metric-card">
@@ -134,79 +444,24 @@
 
 </div>
 
-  <!-- Sobre você -->
-  <div class="about-final">
 
-    <div class="about-photo">
-      <img src="./assets/oi.jpg" alt="Lais Cristina">
+    <div class="about-final">
+        <div class="about-photo">
+            <img src="./assets/oi.jpg" alt="Lais Cristina">
+        </div>
+        <div class="about-text">
+            <h3>Sobre mim</h3>
+            <p>Desenvolvedora front-end e web designer, com formação em tecnologia e foco em UX e performance. Criando soluções digitais que geram resultados.</p>
+            <a href="https://www.linkedin.com/in/lais-cristina-300817144" target="_blank" class="btn-linkedin">Conectar no LinkedIn</a>
+        </div>
     </div>
-
-    <div class="about-text">
-      <h3>Sobre mim</h3>
-      <p>
-        Sou desenvolvedora front-end e web designer, com formação em tecnologia
-        e atuação em UX, SEO e performance. Trabalho do código à entrega final,
-        criando soluções digitais funcionais, escaláveis e orientadas a resultados.
-      </p>
-
-      <a
-        href="https://www.linkedin.com/in/lais-cristina-300817144/"
-        target="_blank"
-        class="btn-linkedin"
-      >
-        Conectar no LinkedIn
-      </a>
-    </div>
-
-  </div>
-
 </section>
 
-<!-- Footer -->
 <footer class="footer-final">
-  <p>© 2026 — Lais Cristina • Front-End • UI • UX</p>
+    <p>© 2026 — Lais Cristina • Front-End • UI • UX</p>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const title = document.getElementById("timelineTitle");
-  const trigger = document.getElementById("chapterTrigger");
-  const scrollContainer = document.querySelector(".scroll-container");
-
-  const titles = {
-    social: "Minha jornada como Social Media",
-    next: "Minhas aplicações web"
-  };
-
-  // estado inicial GARANTIDO
-  title.textContent = titles.social;
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        title.textContent = titles.next;
-      } else {
-        title.textContent = titles.social;
-      }
-    },
-    {
-      root: scrollContainer,
-      threshold: 0,
-    rootMargin: "-80% 0px 0px 0px"
-
-      // 👆 só ativa quando o trigger passa do meio da tela
-    }
-  );
-
-  observer.observe(trigger);
-
-});
-
-
-</script>
-
-<script src="script.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
