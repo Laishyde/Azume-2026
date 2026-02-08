@@ -743,82 +743,35 @@ background: linear-gradient(
 }
 
 
+/* =========================
+   CORREÇÃO FINAL GRID MOBILE (SAMSUNG A14 / CELULARES ≤ 520px)
+========================= */
+@media (max-width: 520px) {
 
-@media (min-width: 400px) and (max-width: 440px) {
-
-    /* --- TÍTULOS --- */
-    .title {
-        font-size: 30px !important;
-        letter-spacing: 3px !important;
-    }
-
-    .timeline-title {
-        font-size: 2rem !important;
-        margin-bottom: 24rem !important;
-        text-align: center !important;
-        width: 90% !important;
-        max-width: 90% !important;
-    }
-
-    /* --- STORY CARDS --- */
-    .story-card {
-        width: 90% !important;
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 20px !important;
-    }
-
-    .card-visual {
-        width: 100% !important;
-        margin-top: 150px !important;
-    }
-
-    .card-info h2 {
-        font-size: 1.6rem !important;
-    }
-
-    .card-info p {
-        font-size: 0.95rem !important;
-    }
-
-    /* --- METRICS GRID --- */
-    .metrics-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .metric-number {
-        font-size: 2rem !important;
-    }
-
-    /* --- FINAL SECTION --- */
-    .final-section {
-        padding: 6rem 8vw !important;
-        gap: 4rem !important;
-    }
-
+    /* === FINAL GRID CONTAINER === */
     .final-grid-container {
-        position: relative !important;
+        position: relative !important; /* remove absolute */
         display: flex !important;
-        flex-wrap: wrap !important;
+        flex-wrap: wrap !important;    /* permite quebra de linha */
         justify-content: center !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         gap: 20px !important;
-        opacity: 1 !important;
-        transform: translateY(0) !important;
         height: auto !important;
         overflow: visible !important;
-        margin-top: 20px !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
 
+    /* === FINAL ITEMS === */
     .final-item {
-        flex: 0 0 90% !important; /* cada card ocupa quase toda a largura */
-        max-width: 90% !important;
+        flex: 0 0 100% !important; /* cada card ocupa 100% da largura */
+        max-width: 100% !important;
         margin: 0 auto !important;
     }
 
-    /* --- ABOUT FINAL --- */
+    /* === ABOUT FINAL === */
     .about-final {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr !important; /* coluna única */
         text-align: center !important;
     }
 
@@ -826,14 +779,9 @@ background: linear-gradient(
         margin: 0 auto !important;
     }
 
-    /* --- BOTÃO LINKEDIN --- */
-    .btn-linkedin {
-        width: 100% !important;
-        padding: 1rem !important;
-    }
-
-    /* --- FOOTER --- */
-    .footer-final p {
-        font-size: 0.75rem !important;
+    /* === PADRÃO FINAL SECTION === */
+    .final-section {
+        padding: 6rem 8vw !important;
+        gap: 4rem !important;
     }
 }
