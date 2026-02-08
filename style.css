@@ -642,7 +642,6 @@ body {
   }
 }
 
-/* MOBILE MÉDIO (≤ 640px) */
 @media (max-width: 640px) {
   .metrics-grid {
     grid-template-columns: 1fr;
