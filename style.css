@@ -748,7 +748,7 @@ background: linear-gradient(
 ========================= */
 @media (max-width: 520px) {
 
-    /* === FINAL GRID CONTAINER === */
+  
     .final-grid-container {
         position: relative !important; /* remove absolute */
         display: flex !important;
