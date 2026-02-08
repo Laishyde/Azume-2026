@@ -761,7 +761,7 @@ background: linear-gradient(
     }
 
     .final-item {
-        flex: 0 0 90% !important; /* cada card ocupa quase toda a largura */
+        flex: 0 0 90% !important; 
         max-width: 350px !important;
         margin: 0 auto !important;
     }
