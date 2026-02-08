@@ -748,21 +748,49 @@ background: linear-gradient(
 /* =========================
    CORREÇÃO PARA SAMSUNG A14 (≈ 500px)
 ========================= */
+/* =========================
+   CORREÇÃO SAMSUNG A14 (≈ 500px)
+========================= */
 @media (min-width: 480px) and (max-width: 520px) {
+    /* === GRID DE MÉTRICAS === */
+    .metrics-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* === SEÇÃO SOBRE FINAL === */
+    .about-final {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    .about-photo img {
+        margin: 0 auto !important;
+    }
+
+    /* === SEÇÃO FINAL === */
+    .final-section {
+        padding: 6rem 8vw !important;
+    }
+
+    /* === FINAL GRID CONTAINER === */
     .final-grid-container {
-        flex-direction: column !important;
-        flex-wrap: wrap !important;
-        align-items: center !important;
-        height: auto !important;
-        gap: 20px !important;
-        overflow-y: visible !important;
         position: relative !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        height: auto !important;
+        overflow: visible !important;
         margin-top: 20px !important;
     }
 
+    /* === FINAL ITEM === */
     .final-item {
-        flex: 0 0 90% !important; 
-        max-width: 350px !important;
+        flex: 0 0 45% !important; /* cada card ocupa quase metade da tela */
+        max-width: 45% !important;
         margin: 0 auto !important;
     }
 }
